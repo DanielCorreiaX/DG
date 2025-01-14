@@ -1,15 +1,34 @@
-const AllPages =`
-    query Allposts {
-        posts(orderBy: publyshedAt_desc){
-            id
-            Title
-            Slug
-            date
-            excerto
-            }
-        }
+const SinglePage = `
+ query SinglePage($slug: String!) {
+   page(where: { slug: $slug }) {
+     title
+     seoOverride {
+       title
+       image {
+         height
+         width
+         url
+       }
+       description
+     }
+     content {
+       html
+       raw
+     }
+   }
+ }
 `
-
+const AllPosts = `
+ query AllPosts {
+   posts(orderBy: publishedAt_DESC) {
+     id
+     excerpt
+     slug
+     title
+     date
+   }
+ }
+`
 const SinglePost = `
     query SinglePost($slug: String!){
         post(where: { slug: $slug }) {
