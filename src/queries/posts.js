@@ -22,7 +22,7 @@ const AllPosts = `
  query AllPosts {
    posts(orderBy: publishedAt_DESC) {
      id
-     excerpt
+     excert
      slug
      title
      date
