@@ -1,23 +1,3 @@
-const SinglePage = `
- query SinglePage($slug: String!) {
-   page(where: { slug: $slug }) {
-     title
-     seoOverride {
-       title
-       image {
-         height
-         width
-         url
-       }
-       description
-     }
-     content {
-       html
-       raw
-     }
-   }
- }
-`
 const AllPosts = `
  query AllPosts {
    posts(orderBy: publishedAt_DESC) {
@@ -65,4 +45,4 @@ const SinglePost = `
             }
         }
     `
-export { AllPosts, SinglePosts}
+export { AllPosts, SinglePost}
